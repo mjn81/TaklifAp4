@@ -1,12 +1,12 @@
 #ifndef TAKLIF4AP_DATE_H
 #define TAKLIF4AP_DATE_H
-
+#include <iostream>
 #include <string>
 #include "Age.h"
-
 using namespace std;
 
 class Date {
+
 private:
     int *day{}, *month{}, *year{};
 public:
@@ -18,11 +18,11 @@ public:
 
     ~Date();
 
-    int getDay();
+    int getDay() const;
 
-    int getMonth();
+    int getMonth() const;
 
-    int getYear();
+    int getYear() const;
 
     void setDay(int);
 
@@ -34,11 +34,22 @@ public:
 
     Age calculateAge(Date &);
 
-    Date nYearBefore(int);
+    Date nYearBefore(int , int nm=-1, int nd=-1);
 
-    Date nMonthBefore(int);
+    Date nMonthBefore(int ,int nd=-1);
 
     Date nDayBefore(int);
+
+    Date birthDate(Age);
+
+    Date nYearAfter(int);
+
+    Date nMonthAfter(int);
+
+    Date nDayAfter(int);
+
+    int distanceDates(Date);
+
 };
 
 

@@ -14,7 +14,7 @@ Age::Age(int day, int month, int year) {
 Age::Age(Age &copy) {
     day = copy.day;
     month = copy.month;
-    year = copy.month;
+    year = copy.year;
 }
 
 int Age::getDay() const {
