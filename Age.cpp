@@ -21,7 +21,6 @@ int Age::getDay() const {
     return day;
 }
 
-
 int Age::getMonth() const {
     return month;
 }
@@ -55,7 +54,7 @@ void Age::setYear(int Year) {
 }
 
 void Age::printAge() const {
-    std::cout << year << " year , " << month << " month , " << day << " day";
+    std::cout << year << " years , " << month << " months , " << day << " days\n";
 }
 
 Age Age::convertDayToAge(int Day) {
@@ -63,10 +62,11 @@ Age Age::convertDayToAge(int Day) {
         std::cout << "invalid input!";
         exit(-1);
     }
-    year = Day / 360;
+    int y = Day / 360;
     Day %= 360;
-    month = Day / 30;
+    int m = Day / 30;
     Day %= 30;
-    day = Day;
-    return *this;
+    int d = Day;
+    Age temp(d, m, y);
+    return temp;
 }

@@ -26,7 +26,7 @@ public:
 
     void printAge() const;
 
-    Age convertDayToAge(int);
+    static Age convertDayToAge(int);
 
 };
 
